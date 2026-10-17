@@ -377,10 +377,17 @@ h1{
     padding: 0;
   }
 
+  .header-left {
+    width: 100%;                /* the logo row stretches across the whole screen */
+    gap: 10px;
+  }
+
   .logo,
   .travel {
-    width: 100px;
-    height: 44px;
+    flex: 1;                    /* each logo gets half of the row */
+    min-width: 0;               /* allow them to shrink to fit */
+    width: auto;
+    height: auto;               /* height follows the width, keeping the shape */
   }
 
   .header-right {
@@ -391,19 +398,22 @@ h1{
 
   /* --- Search + nav: icons on top, search full width below --- */
   .below-header {
-    flex-wrap: wrap;
-    gap: 8px;
+    gap: 4px;
     padding: 8px 0;
   }
 
   .search {
-    order: 2;                   /* move the search bar after the nav */
-    flex: 1 1 100%;             /* take the whole row */
+    flex: 1;                    /* search takes the space left over by the icons */
+    min-width: 0;               /* allow it to shrink so the icons fit beside it */
   }
 
-  .nav {
-    order: 1;
-    margin-left: auto;          /* push the icons to the right */
+  .search input {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .nav-item {
+    padding: 6px;               /* smaller buttons so search + icons fit on one row */
   }
 
   .nav-item span:not(.cart-count) {
