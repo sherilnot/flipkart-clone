@@ -357,3 +357,165 @@ h1{
   color: #388e3c;              /* Flipkart green */
   font-weight: bold;
 }
+
+/* =====================================================
+   PHONES (screens 768px wide or smaller)
+   Everything inside this block ONLY applies on small
+   screens. On a laptop these rules are ignored.
+   ===================================================== */
+@media (max-width: 768px) {
+
+  /* less empty space at the sides */
+  body {
+    padding: 8px 12px;
+  }
+
+  /* --- Top row: logos, location below them --- */
+  .header {
+    flex-wrap: wrap;            /* allow items to drop to a new line */
+    gap: 8px;
+    padding: 0;
+  }
+
+  .logo,
+  .travel {
+    width: 100px;
+    height: 44px;
+  }
+
+  .header-right {
+    margin-left: 0;
+    width: 100%;                /* location gets its own full row */
+    font-size: 12px;
+  }
+
+  /* --- Search + nav: icons on top, search full width below --- */
+  .below-header {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 8px 0;
+  }
+
+  .search {
+    order: 2;                   /* move the search bar after the nav */
+    flex: 1 1 100%;             /* take the whole row */
+  }
+
+  .nav {
+    order: 1;
+    margin-left: auto;          /* push the icons to the right */
+  }
+
+  .nav-item span:not(.cart-count) {
+    display: none;              /* hide the words, keep only the icons */
+  }
+
+  .more-btn {
+    display: none;              /* "More" is text-only, so hide it */
+  }
+
+  /* --- Categories: swipe sideways instead of squashing --- */
+  .categories {
+    justify-content: flex-start;
+    padding: 8px 0 0;
+  }
+
+  .category {
+    flex: 0 0 72px;             /* fixed 72px each, the rest scroll */
+  }
+
+  .category p {
+    font-size: 12px;
+  }
+
+  .category svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  /* --- All sections: no side margin (body already has it) --- */
+  .slider,
+  .diwali,
+  .deals,
+  .badge-deals {
+    margin: 12px 0;
+  }
+
+  .suggested {
+    padding: 12px 0;
+  }
+
+  .deals h2,
+  .suggested h2,
+  .badge-deals h2 {
+    font-size: 18px;
+  }
+
+  /* --- Banners: one big banner at a time --- */
+  .slider {
+    gap: 12px;
+  }
+
+  .slide {
+    flex: 0 0 85%;              /* 85% so you can see the next one peeking */
+  }
+
+  /* --- Top deals on tech --- */
+  .deals {
+    padding: 12px;
+  }
+
+  .deal-card {
+    height: 170px;
+  }
+
+  /* --- Suggested phones: swipe sideways --- */
+  .phone-card {
+    flex: 0 0 140px;
+  }
+
+  .phone-card img {
+    height: 160px;
+  }
+
+  .phone-card p {
+    font-size: 13px;
+  }
+
+  /* --- Deals of the Day: 2 columns instead of 3 --- */
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .product-img-box {
+    height: 200px;
+  }
+
+  .badge {
+    font-size: 11px;
+    padding: 4px 8px;
+    top: 8px;
+    left: 8px;
+  }
+
+  .rating {
+    font-size: 12px;
+    bottom: 8px;
+    left: 8px;
+  }
+
+  .product-name {
+    font-size: 13px;
+  }
+
+  .price-line {
+    flex-wrap: wrap;            /* let the price line wrap if it's too long */
+    gap: 4px 6px;
+    font-size: 12px;
+  }
+
+  .price-line b {
+    font-size: 15px;
+  }
+}
