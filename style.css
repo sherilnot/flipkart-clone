@@ -1,0 +1,359 @@
+body{
+    background-color : white;
+    font-family: Arial, sans-serif;
+    padding : 15px 100px;
+}
+h1{
+    color: #2874f0;
+    
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.section{
+    margin : 16px 32px;
+}
+.header{
+    background : white;
+    display : flex;
+    align-items : center;
+    gap : 32px;
+    padding : 1px 32px;
+}
+.header-right{
+    margin-left: auto;
+    align-items : center;
+    display : flex;
+    gap : 6px;
+    font-size : 14px;
+    font-weight: bold;
+}
+.location{
+  font-weight: bold;
+}
+.below-header{
+    background : white;
+    display : flex;
+    align-items : center;
+    gap : 32px;
+    padding : 16px 32px;
+    border-bottom : 1px solid #e0e0e0;
+}
+.header-left{
+    display : flex;
+    align-items : center;
+   gap : 16px;
+    text-decoration : none;
+    
+    
+}
+.logo , .travel{
+    width : 140px;
+    height : 60px;
+    object-fit : contain;
+}
+.logo-text {
+  color: #2874f0;
+  font-size: 24px;
+  font-weight: bold;
+  font-style: italic;
+}
+.logo-sub {
+  color: #878787;
+  font-size: 11px;
+  font-style: italic;
+}
+.search{
+    flex : 1;
+}
+.search input{
+    width : 100%;
+    background: #f0f5ff;
+  border: 2px solid #2874f0;  /* width + style + colour */
+  border-radius: 8px;     /* rounded corners */
+  padding: 12px 16px;
+  font-size: 15px;
+}
+.nav{
+    display : flex;
+    gap : 0px;
+}
+.nav-item {
+  background: none;
+  border: none;
+  padding: 6px 10px;
+  font-size: 16px;
+  color: #212121;
+  text-decoration: none;
+  border-radius: 8px;
+  cursor: pointer;        /* hand cursor on hover */
+  display: flex;          /* icon and text side by side */
+  align-items: center;
+  gap: 8px;
+}
+.nav-item:hover {         /* only applies while the mouse is over it */
+  background: #2874f0;
+  color: white;
+}
+/* ===== NAV EXTRAS ===== */
+.arrow {
+  font-size: 14px;
+  margin-top: -6px;     /* nudge the arrow up a little */
+}
+
+.cart {
+  position: relative;   /* the bubble is placed relative to this box */
+}
+
+.cart-count {
+  position: absolute;   /* lift the bubble out and place it freely */
+  top: 2px;
+  left: 26px;
+  background: #ff6161;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  min-width: 17px;
+  height: 17px;
+  border-radius: 9px;
+  border: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.more {
+  font-size: 20px;
+}
+
+/* ===== CATEGORIES ===== */
+.categories {
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 24px 0;
+  border-bottom: 1px solid #e0e0e0;
+  overflow-x: auto;          /* allow horizontal scrolling if needed */
+}
+
+.category {
+    flex : 1;
+    min-width: 0px;                 /* each category is at least 90px wide */  
+  display: flex;
+  flex-direction: column;          /* icon on top, text below */
+  align-items: center;
+  gap: 5px;
+  width: 90px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid transparent;  /* invisible line, turns blue when active */
+  cursor: pointer;
+}
+
+.category svg {
+  width: 32px;
+  height: 32px;
+  stroke-width: 1.5;               /* thin outline icons */
+}
+
+.category p {
+  font-size: 14px;
+  max-width: 100%;
+  white-space: nowrap;             /* keep text on one line... */
+  overflow: hidden;
+  text-overflow: ellipsis;         /* ...and show "..." if too long */
+}
+
+.category:hover p {
+  color: #2874f0;
+}
+
+/* The selected category ("For You") */
+.category.active {
+  border-bottom-color: #2874f0;    /* blue underline */
+}
+
+.category.active p {
+  font-weight: bold;
+}
+
+.category.active svg {
+  background: #e0ecff;             /* light blue square behind the icon */
+  color: #2874f0;
+  border-radius: 8px;
+  padding: 4px;
+  width: 40px;
+  height: 40px;
+}
+.slider{
+    display : flex;
+    gap : 32px;
+    margin : 16px 32px;
+    overflow-x : auto;
+    scrollbar-width: none;   /* hide the scrollbar */
+}
+.slide{
+    flex : 0 0 40%;
+}
+.slide img{
+    width : 100%;
+    border-radius : 16px;
+    display : block;
+    gap : 32px;
+}
+.diwali{
+  
+  margin : 16px 32px;
+}
+.diwali-img{
+  width : 100%;
+  border-radius : 8px;
+  display : block;
+
+}
+.deals{
+  background : url("images/tech-bg.png");
+  background-size : cover;
+  border-radius : 16px;
+  padding : 16px 24px 20px;    /* ← space inside */
+  margin : 16px 32px;          /* ← space outside, lines up with the banners */
+}
+
+.deal-row{
+  
+  display : flex;
+  gap : 16px;
+  overflow-x : auto;
+}
+.deal-card{
+  border-radius : 12px;
+  align-items : center;
+  height : 240px;
+  width : auto;
+  flex-shrink : 0;
+}
+.deals h2 {
+  color: white;
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+.phone-row{
+  display : flex;
+  gap : 16px;
+  overflow-x : auto;
+  scrollbar-width: none;
+}
+.phone-card{
+ 
+  flex : 1;
+  min-width : 0;
+}
+.phone-card img {
+  width: 100%;                /* image fills the card's width */
+  height: 220px;
+  object-fit: contain;        /* show the whole phone, no stretching */
+  background: #f5f5f5;        /* light grey box behind the phone */
+  border-radius: 12px;
+  display: block;
+}
+.phone-card p {
+  font-size: 15px;
+  margin-top: 6px;
+  white-space: nowrap;         /* one line... */
+  overflow: hidden;
+  text-overflow: ellipsis;     /* ...with "..." */
+}
+.suggested{
+  padding : 16px 32px;
+}
+.suggested h2{
+  font-size : 22px;
+  margin-bottom : 12px;
+}
+/* ===== DEALS OF THE DAY ===== */
+.badge-deals {
+  margin: 16px 32px;
+}
+
+.badge-deals h2 {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+/* 3 cards per row */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));   /* 3 equal columns that are allowed to shrink */
+  gap: 24px;
+}
+
+/* The grey rounded box around the image */
+.product-img-box {
+  position: relative;          /* lets the badge and rating sit on top of it */
+  background: #f0f0f0;
+  border-radius: 16px;
+  height: 340px;
+  display: flex;
+  align-items: center;         /* centre the image vertically... */
+  justify-content: center;     /* ...and horizontally */
+  overflow: hidden;            /* keep everything inside the rounded corners */
+}
+
+.product-img-box img {
+  max-width: 85%;
+  max-height: 85%;
+  object-fit: contain;
+}
+
+/* "Top Discount" label, top-left corner */
+.badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+/* "4.6 ★" bubble, bottom-left corner */
+.rating {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: white;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 4px 10px;
+  border-radius: 8px;
+}
+
+.product-name {
+  font-size: 16px;
+  margin-top: 10px;
+  white-space: nowrap;         /* one line... */
+  overflow: hidden;
+  text-overflow: ellipsis;     /* ...with "..." */
+}
+
+.price-line {
+  margin-top: 4px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.price-line b {
+  font-size: 18px;
+}
+
+.price-line s {
+  color: #878787;              /* grey crossed-out MRP */
+}
+
+.off {
+  color: #388e3c;              /* Flipkart green */
+  font-weight: bold;
+}
