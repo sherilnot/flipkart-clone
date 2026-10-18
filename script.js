@@ -212,3 +212,35 @@ gadgets.forEach(item=>{
     </div>
     `
 });
+
+// ===== FLIPKART SERVICES ICONS =====
+const services = [
+  "Credit Card", "EMI", "Pay Later", "2 Wheeler Loans", "Loans",
+  "Gift Cards", "Sell Phone", "SuperCoin", "BLACK", "Pay",
+  "For GenZ", "Originals", "Vouchers"
+];
+
+const serviceRow = document.getElementById("serviceRow");
+
+services.forEach((name, index) => {
+  serviceRow.innerHTML += `
+    <div class="service">
+      <img src="images/icon${index + 1}.png" alt="${name}">
+      <p>${name}</p>
+    </div>
+  `;
+});
+const aceRow = document.getElementById("aceRow");
+for(let i=1;i<=3;i++)
+{
+  aceRow.innerHTML += `
+    <img class="ace-card" src="images/ace${i}.png" alt="Ace brand ${i}">
+  `;
+}
+const heroCard = document.getElementById("heroCard");
+
+for(let i=1;i<=4;i++)
+{
+    heroCard.innerHTML += `
+    <img class="hero-img" src="images/hero${i}.png">`;
+}

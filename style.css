@@ -39,7 +39,7 @@ h1{
     align-items : center;
     gap : 32px;
     padding : 16px 32px;
-    border-bottom : 1px solid #e0e0e0;
+   
 }
 .header-left{
     display : flex;
@@ -70,7 +70,7 @@ h1{
 }
 .search input{
     width : 100%;
-    background: #f0f5ff;
+    background: #ffffff;
   border: 2px solid #2874f0;  /* width + style + colour */
   border-radius: 8px;     /* rounded corners */
   padding: 12px 16px;
@@ -152,8 +152,10 @@ h1{
 }
 
 .category svg {
-  width: 32px;
-  height: 32px;
+  width: 40px;                     /* EVERY icon gets the same 40px box... */
+  height: 40px;
+  padding: 4px;                    /* ...with the drawing 32px inside it */
+  border-radius: 8px;
   stroke-width: 1.5;               /* thin outline icons */
 }
 
@@ -179,12 +181,8 @@ h1{
 }
 
 .category.active svg {
-  background: #e0ecff;             /* light blue square behind the icon */
+  background: #e0ecff;             /* only the active one gets the light blue square */
   color: #2874f0;
-  border-radius: 8px;
-  padding: 4px;
-  width: 40px;
-  height: 40px;
 }
 .slider{
     display : flex;
@@ -470,7 +468,82 @@ h1{
   font-size: 22px;
   margin-bottom: 10px;
 }
+.services{
+  margin : 16px 32px;
+}
+.service-row{
+  display: flex;
+  gap: 16px;                    /* space between the icons */
+  overflow-x: auto;             /* scroll sideways when they don't fit */
+  scrollbar-width: none;        /* hide the scrollbar */
+}
+.service{
+  flex: 0 0 90px;               /* fixed 90px each: no growing, no shrinking */
+  text-align: center;
+  cursor: pointer;
+}
+.service img {
+  height: 60px;
+  width : auto
+  max-width: 90px;       /* never bigger than 90px */
+  display: block;
+  margin: 0 auto;        /* centre the icon */
+}
 
+.service p {
+  font-size: 14px;
+  font-weight: 450;
+  font-family: sans-serif;
+  margin-top: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.ace{
+  margin: 16px 32px;
+}
+.ace h2{
+  font-size:22px;
+  margin-bottom: 20px;
+}
+.ace-row {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.ace-card{
+  height : 210px;
+  width :auto;
+  border-radius:16px;
+}
+.hero{
+  margin: 16px 32px;
+
+}
+.hero h2{
+  font-size:22px;
+  margin-bottom: 20px;
+}
+.hero-card{
+   display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scrollbar-width: none;
+
+}
+.hero-img{
+   height : 210px;
+  width :auto;
+  border-radius:16px;
+
+}
+
+
+/* ===== BOTTOM BAR (phones only) ===== */
+.bottom-bar {
+  display: none;                /* hidden on PC */
+}
 
 /* =====================================================
    PHONES (screens 768px wide or smaller)
@@ -481,7 +554,7 @@ h1{
 
   /* less empty space at the sides */
   body {
-    padding: 8px 12px;
+    padding: 8px 12px 72px;     /* extra space at the bottom so the bar doesn't cover content */
   }
 
   /* --- Top row: logos, location below them --- */
@@ -489,11 +562,13 @@ h1{
     flex-wrap: wrap;            /* allow items to drop to a new line */
     gap: 8px;
     padding: 0;
+    margin-bottom: 10px;
   }
 
   .header-left {
     width: 100%;                /* the logo row stretches across the whole screen */
     gap: 10px;
+    padding : 12px;
   }
 
   .logo,
@@ -518,12 +593,18 @@ h1{
 
   .search {
     flex: 1;                    /* search takes the space left over by the icons */
-    min-width: 0;               /* allow it to shrink so the icons fit beside it */
+    min-width: 0; 
+                  /* allow it to shrink so the icons fit beside it */
   }
 
   .search input {
     padding: 10px 12px;
     font-size: 14px;
+    height: 50px;
+  }
+
+  .nav {
+    display: none;              /* on phones, Login/Cart move to the bottom bar */
   }
 
   .nav-item {
@@ -553,8 +634,8 @@ h1{
   }
 
   .category svg {
-    width: 26px;
-    height: 26px;
+    width: 34px;                   /* same size for ALL icons, including "For You" */
+    height: 34px;
   }
 
   /* --- All sections: no side margin (body already has it) --- */
@@ -612,12 +693,12 @@ h1{
 
   /* --- Deals of the Day: 2 columns instead of 3 --- */
   .product-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(1, minmax(0, 1fr));
     gap: 12px;
   }
 
   .product-img-box {
-    height: 200px;
+    height: 600px;
   }
 
   .badge {
@@ -705,5 +786,105 @@ h1{
   .gadgets{
     margin :12px 0;
   }
+  .services{
+    margin: 12px 0;
+    margin-bottom: 36px;
+  }
+  .service img{
+    height: 43px;
+    width : auto;
+  }
+  .service-row{
+    gap : 5px;
+  }
+  .service {
+    flex: 0 0 70px;      /* fixed 70px each, swipe to see the rest */
+  }
+  .service p{
+    font-size :12px;
+    font-weight : 350%;
 
+  }
+  .ace{
+    margin: 12px 0;
+  }
+  .ace h2{
+    font-size : 17px;
+  }
+  .ace-row{
+    
+  }
+  .ace-card{
+    flex :1;
+    min-width : 0;
+    height : 120px;
+    width: auto;
+  }
+  .hero{
+    margin : 12px 0;
+  }
+  .hero h2{
+    font-size : 17px;
+  }
+  .hero-img{
+   flex :1;
+    min-width : 0;
+    height : 120px;
+    width: auto; 
+  }
+  
+
+  /* --- Bottom bar: pinned to the bottom of the screen --- */
+  .bottom-bar {
+    display: flex;
+    justify-content: space-around;   /* spread the 4 buttons evenly */
+    position: fixed;                 /* pinned to the SCREEN, not the page */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;                    /* above everything else */
+    background: white;
+    border-top: 1px solid #e0e0e0;
+    padding: 6px 0 8px;
+  }
+
+  .bottom-item {
+    position: relative;              /* so the cart bubble can sit on the icon */
+    display: flex;
+    flex-direction: column;          /* icon on top, word below */
+    align-items: center;
+    gap: 2px;
+    font-size: 11px;
+    color: #212121;
+    text-decoration: none;
+    flex: 1;                         /* each button gets a quarter of the bar */
+  }
+
+  .bottom-item svg {
+    width: 24px;
+    height: 24px;
+    stroke-width: 1.6;
+  }
+
+  .bottom-item.active {
+    color: #2874f0;                  /* the current page is blue */
+    font-weight: bold;
+  }
+
+  /* red number bubble on the cart icon */
+  .bottom-count {
+    position: absolute;
+    top: -4px;
+    left: 54%;
+    background: #ff6161;
+    color: white;
+    font-size: 10px;
+    min-width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
