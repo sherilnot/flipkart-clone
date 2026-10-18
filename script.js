@@ -70,7 +70,8 @@ phones.forEach(phone => {
     <div class="phone-card">
         <img src="${phone.img}" alt="${phone.name}">
         <p>${phone.name}</p>
-        <p>${phone.price}</p>
+        <p>${phone.price} ${phone.oldPrice}  </p>
+        <p style="color: #1a09d3;"><b>${phone.offer}</b> With Bank <br> Offer  </p>
     </div>
     `;
 });
@@ -152,4 +153,62 @@ products.forEach(product => {
       </p>
     </div>
   `;
+});
+
+// ===== WIDEST COLLECTION =====
+const collection = [
+  { title: "Men's Slippers & Flip Flops", offer: "Under ₹199",  img: "images/widest1.jpeg" },
+  { title: "Comfy Feels",                 offer: "From ₹199",   img: "images/widest2.jpeg" },
+  { title: "Cello, Milton & more",        offer: "From ₹99",    img: "images/widest3.jpeg" },
+  { title: "boAt, realme, Mivi & more",   offer: "Min 50% Off", img: "images/widest4.png"  }
+];
+
+const collectionGrid = document.getElementById("collectionGrid");
+
+collection.forEach(item => {
+  collectionGrid.innerHTML += `
+    <div class="collection-card">
+      <div class="collection-img">
+        <img src="${item.img}" alt="${item.title}">
+      </div>
+      <p>${item.title}</p>
+      <b>${item.offer}</b>
+    </div>
+  `;
+});
+const ads = ["ad1.png", "ad2.png", "ad3.png", "ad4.png", "ad5.png",
+             "ad6.png", "ad7.png", "ad8.png", "ad9.png", "ad10.png"];
+
+const adRow = document.getElementById("spotlightRow");
+ads.forEach(ad => {
+  adRow.innerHTML += `
+    <div class="ad-card">
+      <img src="images/${ad}" alt="Ad">
+    </div>
+  `;
+});
+const hourlyDeals = document.getElementById("hourlyRow");
+for(let i=1; i<=10; i++){
+    hourlyDeals.innerHTML += ` 
+        <img class="hourly-card" src="images/hourly${i}.png" alt="Hourly Deal ${i}">`;
+}
+const gadgets = [
+  { title: "Bikes & Scooters", offer: "Widest Range",  img: "images/gadget1.jpeg" },
+  { title: "Mobiles",          offer: "Min. 50% Off",  img: "images/gadget2.jpeg" },
+  { title: "Shavers",          offer: "Min. 50% Off",  img: "images/gadget3.jpeg" },
+  { title: "Trimmers",         offer: "Min. 50% Off",  img: "images/gadget4.jpeg" }
+];
+const gadgetsgrid = document.getElementById("gadgetGrid");
+
+gadgets.forEach(item=>{
+    gadgetsgrid.innerHTML+= `
+    <div class="collection-card">
+      <div class="collection-img">
+        <img src="${item.img}" alt="${item.title}">
+      </div>
+      <p>${item.title}</p>
+      <b>${item.offer}</b>
+
+    </div>
+    `
 });

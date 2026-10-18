@@ -358,6 +358,120 @@ h1{
   font-weight: bold;
 }
 
+
+/* ===== WIDEST COLLECTION ===== */
+.widest {
+  margin: 16px 32px;              /* same spacing as the other sections */
+  padding: 44px 12px 12px;        /* extra space on top for the lights strip + title */
+  border-radius: 16px;
+  /* blue colour + lights picture stuck to the top, full width, shown once */
+  background: #3d5af1 url("images/widest-bg.png") top / 100% auto no-repeat;
+}
+
+.widest h2 {
+  color: white;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+/* the white box that holds the 4 cards */
+.collection-box {
+  background: white;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+/* 4 equal columns on PC */
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+/* grey box with a fixed height; the picture is centred inside it */
+.collection-img {
+  height: 200px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* the picture can never be bigger than its box */
+.collection-img img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.collection-card p {
+  margin-top: 8px;
+  font-size: 15px;
+}
+
+.collection-card b {
+  font-size: 16px;
+}
+.spotlight {
+  margin: 16px 32px;
+  
+              /* keep the image inside the rounded corners */
+}
+.spotlight h2 {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+.spotlight-row {
+  display: flex;
+  gap: 35px;
+  overflow-x: auto;             /* scroll sideways if needed */
+  scrollbar-width: none;        /* hide the scrollbar */
+}
+.ad-card img {
+  height : 36px;
+  width : auto;            /* fixed width, no shrinking */
+  border-radius: 12px;
+  flex-shrink: 0;          /* fixed width, no shrinking */
+}
+.hourly {
+  margin: 16px 32px;
+  background: #3d5af1 url("images/hourly-bg.png") top / 100% auto no-repeat;
+  border-radius: 16px;
+  padding: 30px 12px 12px;        /* extra space on top for the lights strip + title */
+
+}
+.hourly-row {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;             /* scroll sideways if needed */
+  scrollbar-width: none;        /* hide the scrollbar */
+}
+.hourly-card {
+  height: 200px;
+  width: auto;
+  flex-shrink: 0;          /* fixed width, no shrinking */
+}
+.hourly h2 {
+  color: white;
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+/* ===== BEST GADGETS & APPLIANCES ===== */
+.gadgets {
+  margin: 16px 32px;
+  padding: 20px 12px 12px;
+  border-radius: 16px;
+  background: #8b3dff url("images/gadget-bg.png") top / 100% auto no-repeat;
+}
+
+.gadgets h2 {
+  color: white;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+
 /* =====================================================
    PHONES (screens 768px wide or smaller)
    Everything inside this block ONLY applies on small
@@ -467,7 +581,7 @@ h1{
   }
 
   .slide {
-    flex: 0 0 85%;              /* 85% so you can see the next one peeking */
+    flex: 0 0 100%;              /* 85% so you can see the next one peeking */
   }
 
   /* --- Top deals on tech --- */
@@ -480,8 +594,12 @@ h1{
   }
 
   /* --- Suggested phones: swipe sideways --- */
+  .phone-row {
+    display: flex;
+  }
   .phone-card {
-    flex: 0 0 140px;
+    flex: 1;
+    min-width: 0;                /* allow it to shrink so the next card fits */
   }
 
   .phone-card img {
@@ -528,4 +646,64 @@ h1{
   .price-line b {
     font-size: 15px;
   }
+
+  /* --- Widest collection on phones: only what's different --- */
+  .widest {
+    margin: 12px 0;  
+    padding: 12px;                /* body already has side padding on phones */
+  }
+
+  .widest h2 {
+    font-size: 18px;
+  }
+
+  .collection-grid {
+    display : flex;   /* 2 columns instead of 4 */
+  }
+  .collection-card {
+    flex: 1;
+    min-width: 0;                /* allow it to shrink so the next card fits */
+  }
+  .collection-img {
+    height: 180px;     
+               /* smaller boxes on a small screen */
+  }
+
+  .collection-card p {
+    font-size: 13px;
+  }
+
+  .collection-card b {
+    font-size: 14px;
+  }
+  .spotlight {
+    margin: 20px 0;
+    margin-bottom: 16px;          /* body already has side padding on phones */
+  }
+  .spotlight h2 {
+    font-size: 18px;
+  }
+  .ad-card img {
+    margin-left: 20px;
+    height: 165px;
+    border-radius: 16px;
+  }
+  .hourly {
+    padding: 20px 12px 12px;
+    margin: 12px 0;                /* body already has side padding on phones */
+  }
+  .hourly h2 {
+    font-size: 18px;
+  }
+  .hourly-card {
+    height: 250px;
+    border-radius: 8px;
+  }
+  .deal-card {
+    height: 250px;
+  }
+  .gadgets{
+    margin :12px 0;
+  }
+
 }
